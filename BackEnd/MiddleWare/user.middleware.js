@@ -12,7 +12,6 @@ const isLoggedIn = async function (req, res, next) {
                 message: "Token is required"
             });
         }  
-        // mkldmkl
 
         // Verifying the token
         const userDetail = await jwt.verify(token, process.env.JWT_SECRET); // Ensure SECRET is in environment variables
