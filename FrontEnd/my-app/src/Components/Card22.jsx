@@ -5,7 +5,7 @@ function Card22({ course }) {
     const navigate = useNavigate()
     return (
 
-        <div className='  border shadow-xl shadow-white p-5 w-[22rem] h-[430px] cursor-pointer overflow-hidden rounded-md' 
+        <div className='border shadow-xl shadow-white p-5 w-[22rem] h-[430px] cursor-pointer overflow-hidden rounded-md' 
         onClick={()=>navigate("/course/description",{ state: course })}>
 
             <div className=' border overflow-hidden '>

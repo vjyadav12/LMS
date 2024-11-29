@@ -8,14 +8,10 @@ function Header() {
 
   const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn)
   const Role = useSelector((state) => state?.auth?.role)
+  console.log(Role)
   const dispatch = useDispatch()
-  const[role,setRole] =useState(false)
+  // const[role,setRole] =useState(false)
 
-  // if (Role == "ADMIN") {
-
-  //   setRole = true || false
-
-  // }
 
   const logoutFUN = async (e) => {
     // e.preventDefault;
@@ -63,7 +59,7 @@ function Header() {
                 <Link to="/profile" className="text-white">profile</Link>
               </button>
               <button className="px-3 bg-orange-500 py-1 rounded-lg font-semibold text-white" onClick={logoutFUN}>
-                logout
+              <Link to="/Login" onClick={()=>{isLoggedIn=false}}>Logout</Link>
               </button>
             </li>
           )
@@ -83,15 +79,14 @@ function Header() {
 
           {/* if role is admin then it will show create button */}
 
-          {/* {Role == "ADMIN" (
-            <li className="my-2 flex flex-row w-full ">
-              <button className=" px-3 py-1 bg-blue-400 rounded-lg font-semibold mx-2 hover:bg-blue-700">
-                <Link to="/course/Create_Course " className="text-white">Create_Course</Link>
+          {Role === "ADMIN" && (
+            <li className="my-2 flex flex-row w-full">
+              <button className="px-3 py-1 bg-blue-400 rounded-lg font-semibold mx-2 hover:bg-blue-700">
+                <Link to="/course/Create_Course" className="text-white">Create Course</Link>
               </button>
-             
             </li>
-          )
-          } */}
+          )}
+
 
         </div>
       </nav>
